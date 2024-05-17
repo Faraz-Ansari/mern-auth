@@ -1,11 +1,36 @@
 import React from 'react'
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Home from "./pages/Home";
+import Profile from "./pages/Profile";
+import About from "./pages/About";
+import SignIn from "./pages/SignIn";
+import SignUp from "./pages/SignUp";
+
+const router = new createBrowserRouter([
+    {
+        path: "/",
+        element: <Home />,
+    },
+    {
+        path: "/about",
+        element: <About />,
+    },
+    {
+        path: "/profile",
+        element: <Profile />
+    },
+    {
+        path: "/sign-in",
+        element: <SignIn />
+    },
+    {
+        path: "/sign-up",
+        element: <SignUp />
+    }
+])
 
 function App() {
-    return (
-        <div>
-            <h2 className='text-3xl text-red-600 text-center mt-4'>hello world</h2>
-        </div>
-    )
+    return <RouterProvider router={router} />
 }
 
-export default App
+export default App;
