@@ -4,20 +4,20 @@ import User from '../models/user.model.js';
 import bcryptjs from 'bcryptjs';
 
 // Define the signup controller function as an asynchronous function
-export const signup = async (req, res) => {
-    // Destructure username, email, and password from the request body
+export const signup = async (req, res, next) => {
+    // Extract user details from request
     const { username, email, password } = req.body;
-    // Hash the password using bcryptjs with a salt round of 10
+    // Secure password with bcryptjs
     const hashedPassword = bcryptjs.hashSync(password, 10);
-    // Create a new user instance with the provided username, email, and hashed password
+    // Initialize new user with hashed password
     const newUser = new User({ username, email, password: hashedPassword });
     try {
-        // Attempt to save the new user to the database
+        // Save user to database
         await newUser.save();
-        // If successful, send a 201 status code with a success message
+        // Respond with success if user is saved
         res.status(201).json({ message: "User created successfully" });
     } catch(error) {
-        // If an error occurs, send a 500 status code with the error object
-        res.status(500).json({error})
+        // Handle database save errors
+        next(error);
     }
 };
