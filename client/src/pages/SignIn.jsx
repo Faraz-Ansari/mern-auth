@@ -1,12 +1,20 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 
+import {
+    signInStart,
+    signInSuccess,
+    signInFailure,
+} from "../redux/user/userSlice";
+
+import { useDispatch, useSelector } from "react-redux";
+
 function SignIn() {
     const [formData, setFormData] = useState({});
-    const [error, setError] = useState(false);
-    const [loading, setLoading] = useState(false);
+    const { loading, error } = useSelector((state) => state.user);
 
     const navigate = useNavigate();
+    const dispatch = useDispatch();
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.id]: e.target.value });
@@ -14,8 +22,7 @@ function SignIn() {
 
     const handleSubmit = async (e) => {
         try {
-            setLoading(true);
-            setError(false);
+            dispatch(signInStart());
             e.preventDefault();
             const response = await fetch("/api/auth/signin", {
                 method: "POST",
@@ -25,17 +32,15 @@ function SignIn() {
                 body: JSON.stringify(formData),
             });
             const data = await response.json();
-            console.log(data);
-            setLoading(false);
             if (data.success === false) {
-                setError(true);
+                dispatch(signInFailure(data));
                 return;
             }
 
+            dispatch(signInSuccess(data));
             navigate("/");
         } catch (error) {
-            setLoading(false);
-            setError(true);
+            dispatch(signInFailure(error));
         }
     };
 
@@ -43,7 +48,6 @@ function SignIn() {
         <div className="p-3 max-w-lg mx-auto">
             <h1 className="text-3xl text-center font-semibold my-7">Sign Up</h1>
             <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-                
                 <input
                     type="email"
                     id="email"
@@ -73,7 +77,7 @@ function SignIn() {
                 </Link>
             </div>
             <p className="text-red-700 mt-5">
-                {error && "Something went wrong!"}
+                {error ? error.message || "Something went wrong!" : ""}
             </p>
         </div>
     );

@@ -68,25 +68,6 @@ Make sure you have the following installed on your machine:
 
 3. Open your browser and navigate to `http://localhost:3000`.
 
-## Folder Structure
-
-mern-auth/
-├── api/ # Express server
-│ ├── config/ # Database configuration
-│ ├── controllers # Route controllers
-│ ├── models/ # Mongoose models
-│ ├── routes/ # Express routes
-│ ├── middleware/ # Custom middleware
-│ └── index.js # Entry point
-└── client/ # React application
-├── src/
-│ ├── components/ # Reusable components
-│ ├── pages/ # Page components
-│ ├── context/ # Context API for state management
-│ ├── utils/ # Utility functions
-│ └── App.js # Main App component
-└── tailwind.config.js
-
 ## Contributing
 
 Contributions are welcome! Please fork the repository and create a pull request with your changes. Ensure your code adheres to the project's coding standards.
