@@ -72,20 +72,20 @@ Make sure you have the following installed on your machine:
 
 mern-auth/
 ├── api/ # Express server
-│   ├── config/ # Database configuration
-│   ├── controllers # Route controllers
-│   ├── models/ # Mongoose models
-│   ├── routes/ # Express routes
-│   ├── middleware/ # Custom middleware
-│   └── index.js # Entry point
+│ ├── config/ # Database configuration
+│ ├── controllers # Route controllers
+│ ├── models/ # Mongoose models
+│ ├── routes/ # Express routes
+│ ├── middleware/ # Custom middleware
+│ └── index.js # Entry point
 └── client/ # React application
-    ├── src/
-    │   ├── components/ # Reusable components
-    │   ├── pages/ # Page components
-    │   ├── context/ # Context API for state management
-    │   ├── utils/ # Utility functions
-    │   └── App.js # Main App component
-    └── tailwind.config.js
+├── src/
+│ ├── components/ # Reusable components
+│ ├── pages/ # Page components
+│ ├── context/ # Context API for state management
+│ ├── utils/ # Utility functions
+│ └── App.js # Main App component
+└── tailwind.config.js
 
 ## Contributing
 
