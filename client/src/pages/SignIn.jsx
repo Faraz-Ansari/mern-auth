@@ -8,6 +8,7 @@ import {
 } from "../redux/user/userSlice";
 
 import { useDispatch, useSelector } from "react-redux";
+import OAuth from "../components/OAuth";
 
 function SignIn() {
     const [formData, setFormData] = useState({});
@@ -36,7 +37,6 @@ function SignIn() {
                 dispatch(signInFailure(data));
                 return;
             }
-
             dispatch(signInSuccess(data));
             navigate("/");
         } catch (error) {
@@ -46,7 +46,7 @@ function SignIn() {
 
     return (
         <div className="p-3 max-w-lg mx-auto">
-            <h1 className="text-3xl text-center font-semibold my-7">Sign Up</h1>
+            <h1 className="text-3xl text-center font-semibold my-7">Sign In</h1>
             <form onSubmit={handleSubmit} className="flex flex-col gap-4">
                 <input
                     type="email"
@@ -66,8 +66,10 @@ function SignIn() {
                     disabled={loading}
                     className="bg-slate-700 text-white p-3 hover:opacity-95 disabled:opacity-80 rounded-lg"
                 >
-                    {loading ? "Loading..." : "Sign In"}
+                    {loading ? "Loading..." : "SIGN IN"}
                 </button>
+
+                <OAuth />
             </form>
 
             <div className="flex gap-2 mt-5">

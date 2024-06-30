@@ -1,5 +1,5 @@
 // Define a function to create custom error objects
-export const errorHandler = (statusCode, message) => { 
+export const errorHandler = (statusCode, message) => {
     // Create a new Error object
     const error = new Error();
     // Assign the provided status code to the error
