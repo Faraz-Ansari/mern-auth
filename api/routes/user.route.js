@@ -1,13 +1,15 @@
-// Import the express module to create a router
 import express from "express";
-// Import the 'test' function from the user controller
-import { test } from "../controller/user.controller.js";
+import { test, updateUser } from "../controller/user.controller.js";
+import { verifyToken } from "../utils/verifyUser.js";
 
 // Create a new router instance for handling routes
 const router = express.Router();
 
-// Define a GET route on the root path ('/') and associate it with the 'test' function
+// Define a GET route on the root path ('/') and associate it with the 'test' middleware function
 router.get("/", test);
+
+// Define a POST route on the '/update/:id' path and verify the user using 'verifyUser' middleware before associating it with the 'updateUser' middleware function
+router.post("/update/:id", verifyToken, updateUser);
 
 // Export the router for use in other parts of the application
 export default router;
