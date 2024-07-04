@@ -2,6 +2,8 @@
 
 Welcome to the MERN Authentication App! This project showcases a full-stack authentication system built using the MERN stack: MongoDB, Express, React, and Node.js. The frontend is styled with Tailwind CSS.
 
+Check it out here: https://mern-auth-z28q.onrender.com
+
 ## Table of Contents
 
 -   [Features](#features)
