@@ -1,7 +1,7 @@
 // Import the express module to enable routing capabilities
 import express from "express";
 // Import the signup controller function from the auth.controller.js file
-import { signup, signin, google } from "../controller/auth.controller.js";
+import { signup, signin, signout, google } from "../controller/auth.controller.js";
 
 // Initialize a new Router object from express to define route handlers
 const router = express.Router();
@@ -11,6 +11,9 @@ router.post("/signup", signup);
 
 // Define a POST route for '/signin' that uses the signin function to handle requests
 router.post("/signin", signin);
+
+// Define a GET route for '/signout' that uses the signout function to handle requests
+router.get("/signout", signout);
 
 // Define a POST route for '/google' that uses the google function to handle requests
 router.post("/google", google);
