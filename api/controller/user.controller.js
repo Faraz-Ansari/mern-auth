@@ -32,7 +32,7 @@ export const updateUser = async (req, res, next) => {
         );
 
         const { password, ...restOfUser } = updatedUser._doc;
-        res.status(200).json(restOfUser);
+        res.status(200).json({restOfUser});
     } catch (error) {
         next(error);
     }
