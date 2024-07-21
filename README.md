@@ -1,4 +1,4 @@
-# MERN Authentication App
+# NexusGuard
 
 Welcome to the NexusGuard! This project showcases a full-stack authentication system built using the MERN stack: MongoDB, Express, React, and Node.js. The frontend is styled with Tailwind CSS.
 
