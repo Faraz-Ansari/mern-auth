@@ -189,16 +189,16 @@ function Profile() {
                     {loading ? "Loading..." : "UPDATE"}
                 </button>
             </form>
-            <div className="flex justify-between mt-5">
+            <div className="flex justify-between mt-5 text-lg">
                 <span
-                    className="text-red-700 cursor-pointer"
+                    className="text-red-700 cursor-pointer hover:font-semibold"
                     onClick={handleDeleteAccount}
                 >
                     Delete Account
                 </span>
                 <span
                     onClick={handleSignOut}
-                    className="text-red-700 cursor-pointer"
+                    className="text-green-700 cursor-pointer hover:font-semibold"
                 >
                     Sign out
                 </span>
