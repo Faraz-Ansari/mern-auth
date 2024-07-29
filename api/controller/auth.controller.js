@@ -63,7 +63,7 @@ export const signin = async (req, res, next) => {
             expires: expiryDate,
         })
             .status(200)
-            .json({ restOfUser });
+            .json( restOfUser );
     } catch (error) {
         // Handle database find errors
         next(error);
@@ -92,7 +92,7 @@ export const google = async (req, res, next) => {
                 expires: expiryDate,
             })
                 .status(200)
-                .json({ restOfUser });
+                .json( restOfUser );
         } else {
             // Generate a random password for new user
             const generatedPassword =
@@ -132,7 +132,7 @@ export const google = async (req, res, next) => {
                 expires: expiryDate,
             })
                 .status(200)
-                .json({ restOfUser });
+                .json( restOfUser );
         }
     } catch (error) {
         next(error);

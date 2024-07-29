@@ -69,7 +69,7 @@ function Profile() {
         try {
             dispatch(updateUserStart());
             const response = await fetch(
-                `/api/user/update/${currentUser.restOfUser._id}`,
+                `/api/user/update/${currentUser._id}`,
                 {
                     method: "POST",
                     headers: {
@@ -95,7 +95,7 @@ function Profile() {
         try {
             dispatch(deleteUserStart());
             const response = await fetch(
-                `/api/user/delete/${currentUser.restOfUser._id}`,
+                `/api/user/delete/${currentUser._id}`,
                 {
                     method: "DELETE",
                 }
@@ -135,7 +135,7 @@ function Profile() {
                 <img
                     src={
                         formData.profilePicture ||
-                        currentUser.restOfUser.profilePicture
+                        currentUser.profilePicture
                     }
                     alt="profile"
                     className="h-24 w-24 self-center cursor-pointer rounded-full object-cover mt-2"
@@ -160,7 +160,7 @@ function Profile() {
 
                 <input
                     type="text"
-                    defaultValue={currentUser.restOfUser.username}
+                    defaultValue={currentUser.username}
                     id="username"
                     placeholder="Username"
                     className="bg-slate-100 p-3 rounded-lg"
@@ -168,7 +168,7 @@ function Profile() {
                 />
                 <input
                     type="email"
-                    defaultValue={currentUser.restOfUser.email}
+                    defaultValue={currentUser.email}
                     id="email"
                     placeholder="Email"
                     className="bg-slate-100 p-3 rounded-lg"

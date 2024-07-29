@@ -2,10 +2,6 @@ import { errorHandler } from "../utils/error.js";
 import bcryptjs from "bcryptjs";
 import User from "../models/user.model.js";
 
-export const test = (req, res) => {
-    res.status(200).json({ message: "User route works" });
-};
-
 // Update a user's information
 export const updateUser = async (req, res, next) => {
     if (req.user.id !== req.params.id) {
@@ -32,7 +28,7 @@ export const updateUser = async (req, res, next) => {
         );
 
         const { password, ...restOfUser } = updatedUser._doc;
-        res.status(200).json({ restOfUser });
+        res.status(200).json(restOfUser);
     } catch (error) {
         next(error);
     }

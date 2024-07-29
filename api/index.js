@@ -24,13 +24,13 @@ const PORT = 3000;
 // Define the path of the current directory
 const __dirname = path.resolve();
 
-// Serve the static files from the React app
-app.use(express.static(path.join(__dirname, "/client/dist")));
+// // Serve the static files from the React app
+// app.use(express.static(path.join(__dirname, "/client/dist")));
 
-// Serve the index.html from the React app
-app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname, "client", "dist", "index.html"));
-});
+// // Serve the index.html from the React app
+// app.get("*", (req, res) => {
+//     res.sendFile(path.join(__dirname, "client", "dist", "index.html"));
+// });
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
