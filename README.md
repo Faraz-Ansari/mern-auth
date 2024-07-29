@@ -1,6 +1,6 @@
 # NexusGuard
 
-Welcome to the NexusGuard! This project showcases a full-stack authentication system built using the MERN stack: MongoDB, Express, React, and Node.js. The frontend is styled with Tailwind CSS.
+Welcome to the **NexusGuard**, A full-stack authentication system built using the MERN stack: MongoDB, Express, React, and Node.js. The frontend is styled with Tailwind CSS.
 
 Check it out here: https://mern-auth-z28q.onrender.com
 
@@ -9,8 +9,7 @@ Check it out here: https://mern-auth-z28q.onrender.com
 -   [Features](#features)
 -   [Prerequisites](#prerequisites)
 -   [Installation](#installation)
--   [Usage](#usage)
--   [Folder Structure](#folder-structure)
+-   [Run the application](#run-the-application)
 -   [Contributing](#contributing)
 
 ## Features
@@ -25,8 +24,8 @@ Check it out here: https://mern-auth-z28q.onrender.com
 
 Make sure you have the following installed on your machine:
 
--   [Node.js](https://nodejs.org/)
--   [MongoDB](https://www.mongodb.com/)
+-   Node.js (v14 or later)
+-   MongoDB (local or cloud instance)
 
 ## Installation
 
@@ -40,9 +39,9 @@ Make sure you have the following installed on your machine:
 2. Install dependencies for both client and server:
 
     ```bash
-    cd api
     npm install
-    cd ../client
+
+    cd client
     npm install
     ```
 
@@ -52,12 +51,17 @@ Make sure you have the following installed on your machine:
     JWT_SECRET=your_jwt_secret
     ```
 
-## Usage
+4. Create a `env` file in the `client` directory and add the following:
+
+    ```
+    VITE_FIREBASE_API_KEY=your_google_firebase_api_key
+    ```
+
+## Run the application
 
 1. Start the backend server:
 
     ```bash
-    cd api
     npm start
     ```
 
@@ -68,7 +72,7 @@ Make sure you have the following installed on your machine:
     npm start
     ```
 
-3. Open your browser and navigate to `http://localhost:3000`.
+3. Open your browser and navigate to `http://localhost:5173`.
 
 ## Contributing
 
