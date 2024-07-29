@@ -5,12 +5,15 @@ function Header() {
     const { currentUser } = useSelector((state) => state.user);
 
     return (
-        <div className="bg-slate-200">
-            <div className="flex justify-between items-center max-w-6xl mx-auto p-3">
+        <header className="shadow-md">
+            <div className="flex justify-between items-center max-w-4xl mx-auto p-3">
                 <Link to="/">
-                    <h1 className="font-bold">NexusGuard</h1>
+                    <h1 className="text-sm md:text-3xl font-bold flex flex-wrap">
+                        <span className="text-blue-600">Nexus</span>
+                        <span className="text-slate-800">Guard</span>
+                    </h1>
                 </Link>
-                <ul className="flex gap-4 ">
+                <ul className="flex gap-5 md:text-lg hover:text-red-700">
                     <Link to="/">
                         <li>Home</li>
                     </Link>
@@ -26,7 +29,7 @@ function Header() {
                     </Link>
                 </ul>
             </div>
-        </div>
+        </header>
     );
 }
 
