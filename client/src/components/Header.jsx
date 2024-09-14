@@ -13,11 +13,11 @@ function Header() {
                         <span className="text-slate-800">Guard</span>
                     </h1>
                 </Link>
-                <ul className="flex gap-5 md:text-lg hover:text-red-700">
-                    <Link to="/">
+                <ul className="flex gap-5 md:text-lg ">
+                    <Link to="/" className="hover:text-red-700">
                         <li>Home</li>
                     </Link>
-                    <Link to="/profile">
+                    <Link to="/profile" className="hover:text-red-700">
                         {currentUser ? (
                             <img
                                 src={currentUser.profilePicture}
