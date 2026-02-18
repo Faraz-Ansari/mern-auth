@@ -28,7 +28,8 @@ const __dirname = path.resolve();
 app.use(express.static(path.join(__dirname, "/client/dist")));
 
 // Serve the index.html from the React app
-app.get("*", (req, res) => {
+// This is catch all route (express 5 recommended way so asterisk is removed else regex wildcard must be used)
+app.get((req, res) => {
     res.sendFile(path.join(__dirname, "client", "dist", "index.html"));
 });
 
