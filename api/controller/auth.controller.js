@@ -29,10 +29,10 @@ export const signup = async (req, res, next) => {
 // Define the signin controller function as an asynchronous function
 export const signin = async (req, res, next) => {
     // Extract user details from request
-    const { email, password } = req.body;
+    const { username, password } = req.body;
     try {
         // Find user by email in database
-        const validUser = await User.findOne({ email });
+        const validUser = await User.findOne({ username });
 
         if (!validUser) {
             // Respond with error if user is not found

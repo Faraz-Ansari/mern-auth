@@ -49,9 +49,8 @@ function SignIn() {
             <h1 className="text-3xl text-center font-semibold my-7">Sign In</h1>
             <form onSubmit={handleSubmit} className="flex flex-col gap-4">
                 <input
-                    type="email"
-                    id="email"
-                    placeholder="Email"
+                    id="username"
+                    placeholder="Username"
                     className="bg-slate-100 p-3 rounded-lg"
                     onChange={handleChange}
                 />
@@ -73,7 +72,7 @@ function SignIn() {
             </form>
 
             <div className="flex gap-2 mt-5">
-                <p>Dont Have an account?</p>
+                <p>Don&apos;t Have an account?</p>
                 <Link to="/sign-up">
                     <span className="text-blue-600">Sign up</span>
                 </Link>
